@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "rOC/FwYAdcvIyQGQn7GxN5iUTPtuvrPfzV/kjBWH/EM=",
+  "Source": "InvoiceSystem",
+  "BasePath": "_content/InvoiceSystem",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

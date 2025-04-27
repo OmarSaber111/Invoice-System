@@ -1,0 +1,852 @@
+[
+  {
+    "ContainingType": "InvoiceSystem.Controllers.AdminController",
+    "Method": "AddPermissionToGroup",
+    "RelativePath": "api/Admin/Add-Permission-to-Group",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ApiContract.Dtos.GroupPermissionDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.AdminController",
+    "Method": "AddRequestToRoleForm",
+    "RelativePath": "api/Admin/Add-Request-to-Role-Form",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ApiContract.Dtos.RequestRoleFormDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.AdminController",
+    "Method": "AssignUserToGroup",
+    "RelativePath": "api/Admin/Assign-User-to-Group",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ApiContract.Dtos.AssignUserToGroupDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.AdminController",
+    "Method": "CreateAdmin",
+    "RelativePath": "api/Admin/Create-Admin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ApiContract.Dtos.CreateManualAdminDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.AuthController",
+    "Method": "LoginAsync",
+    "RelativePath": "api/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginDto",
+        "Type": "ApiContract.Dtos.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.AuthController",
+    "Method": "LogOut",
+    "RelativePath": "api/Auth/SignOut",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.AuthController",
+    "Method": "SignUp",
+    "RelativePath": "api/Auth/signup",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ApiContract.Dtos.SignUpDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.BuyersController",
+    "Method": "GetAllBuyers",
+    "RelativePath": "api/Buyers/Get-All-Buyers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "ApiContracts.GResponse\u00601[[System.Collections.Generic.IEnumerable\u00601[[ApiContract.Dtos.BuyerDto, ApiContract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.BuyersController",
+    "Method": "GetBuyerById",
+    "RelativePath": "api/Buyers/Get-Buyer-ById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiContracts.GResponse\u00601[[ApiContract.Dtos.BuyerDto, ApiContract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.FormController",
+    "Method": "CreateForm",
+    "RelativePath": "api/Form/Create-Form",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ApiContract.Dtos.CreateFormDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.FormController",
+    "Method": "DeleteForm",
+    "RelativePath": "api/Form/Delete-Form/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.FormController",
+    "Method": "GetAllForms",
+    "RelativePath": "api/Form/Get-All-Forms",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.FormController",
+    "Method": "GetFormById",
+    "RelativePath": "api/Form/GetFormById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.FormController",
+    "Method": "UpdateForm",
+    "RelativePath": "api/Form/Update-Form",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ApiContract.Dtos.UpdateFormDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.GovernmentController",
+    "Method": "Create",
+    "RelativePath": "api/Government/Create-Government",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ApiContract.Dtos.CreateGovernmentDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.GovernmentController",
+    "Method": "Delete",
+    "RelativePath": "api/Government/Delete-Government/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.GovernmentController",
+    "Method": "GetAll",
+    "RelativePath": "api/Government/Get-All-Governments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.GovernmentController",
+    "Method": "GetById",
+    "RelativePath": "api/Government/Get-Government-By-Id/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.GovernmentController",
+    "Method": "Update",
+    "RelativePath": "api/Government/Update-Government",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ApiContract.Dtos.UpdateGovernmentDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.GroupController",
+    "Method": "CreateGroup",
+    "RelativePath": "api/Group/Create-Group",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ApiContract.Dtos.CreateGroupDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.GroupController",
+    "Method": "DeleteGroup",
+    "RelativePath": "api/Group/Delete-Group/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.GroupController",
+    "Method": "GetAllGroups",
+    "RelativePath": "api/Group/Get-All-Groups",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.GroupController",
+    "Method": "GetGroupById",
+    "RelativePath": "api/Group/GetGroupById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.GroupController",
+    "Method": "UpdateGroup",
+    "RelativePath": "api/Group/Update-Group",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ApiContract.Dtos.UpdateGroupDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.InvoiceController",
+    "Method": "Create",
+    "RelativePath": "api/Invoice/Create-Invoice",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ApiContract.Dtos.CreateInvoiceDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.InvoiceController",
+    "Method": "Delete",
+    "RelativePath": "api/Invoice/Delete-Invoice/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.InvoiceController",
+    "Method": "GetAll",
+    "RelativePath": "api/Invoice/Get-All-Invoices",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.InvoiceController",
+    "Method": "GetInvoiceByBuyerId",
+    "RelativePath": "api/Invoice/Get-Invoice-ByBuyerId/{buyerid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "buyerid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.InvoiceController",
+    "Method": "GetInvoiceBySellerId",
+    "RelativePath": "api/Invoice/Get-Invoice-BySellerId/{sellerid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sellerid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.InvoiceController",
+    "Method": "GetById",
+    "RelativePath": "api/Invoice/GetInvoiceById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.InvoiceController",
+    "Method": "Update",
+    "RelativePath": "api/Invoice/Update-Invoice",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ApiContract.Dtos.UpdateInvoiceDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.ProductController",
+    "Method": "Create",
+    "RelativePath": "api/Product/Create-Product",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ApiContract.Dtos.CreateProductDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.ProductController",
+    "Method": "Delete",
+    "RelativePath": "api/Product/Delete-Product/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.ProductController",
+    "Method": "GetAll",
+    "RelativePath": "api/Product/Get-All-Products",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.ProductController",
+    "Method": "GetAllProductsBySellerAsync",
+    "RelativePath": "api/Product/Get-All-Products-BySellerId/{sellerId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sellerId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiContracts.GResponse\u00601[[System.Collections.Generic.IEnumerable\u00601[[ApiContract.Dtos.ProductDto, ApiContract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.ProductController",
+    "Method": "GetById",
+    "RelativePath": "api/Product/Get-Product-ById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.ProductController",
+    "Method": "Update",
+    "RelativePath": "api/Product/Update-Product",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ApiContract.Dtos.UpdateProductDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.RoleController",
+    "Method": "CreateRole",
+    "RelativePath": "api/Role/Create-Role",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ApiContract.Dtos.CreateRoleDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.RoleController",
+    "Method": "DeleteRole",
+    "RelativePath": "api/Role/Delete-Role/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.RoleController",
+    "Method": "GetAllRoles",
+    "RelativePath": "api/Role/Get-All-Roles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.RoleController",
+    "Method": "GetRoleById",
+    "RelativePath": "api/Role/GetRoleById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.RoleController",
+    "Method": "UpdateRole",
+    "RelativePath": "api/Role/Update-Role",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ApiContract.Dtos.UpdateRoleDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.SellersController",
+    "Method": "DeleteSeller",
+    "RelativePath": "api/Sellers/Delete-Seller",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sellerid",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiContract.Dtos.SellerDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.SellersController",
+    "Method": "GetAllSellers",
+    "RelativePath": "api/Sellers/Get-All-Sellers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "ApiContracts.GResponse\u00601[[System.Collections.Generic.IEnumerable\u00601[[ApiContract.Dtos.SellerDto, ApiContract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.SellersController",
+    "Method": "GetSellerById",
+    "RelativePath": "api/Sellers/Get-Seller-ById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiContracts.GResponse\u00601[[ApiContract.Dtos.SellerDto, ApiContract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.SellersController",
+    "Method": "GetSellerByUserId",
+    "RelativePath": "api/Sellers/Get-Seller-ByUserId/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiContract.Dtos.SellerDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.SellersController",
+    "Method": "UpdateSeller",
+    "RelativePath": "api/Sellers/Update-Seller",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateSellerDto",
+        "Type": "ApiContract.Dtos.UpdateSellerDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiContract.Dtos.SellerDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.UsersController",
+    "Method": "DeleteUser",
+    "RelativePath": "api/Users/Delete-User",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userid",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiContract.Dtos.SellerDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.UsersController",
+    "Method": "GetAllUsers",
+    "RelativePath": "api/Users/Get-All-Users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "ApiContracts.GResponse\u00601[[System.Collections.Generic.IEnumerable\u00601[[ApiContract.Dtos.UserDto, ApiContract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "InvoiceSystem.Controllers.UsersController",
+    "Method": "GetUserById",
+    "RelativePath": "api/Users/Get-User-ById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiContracts.GResponse\u00601[[ApiContract.Dtos.UserDto, ApiContract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]
