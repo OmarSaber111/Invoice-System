@@ -1,0 +1,32 @@
+h4, h5 {
+  color: #FF5D00;
+}
+
+table th {
+  background-color: #1D2A5C !important;
+  color: white !important;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(255, 93, 0, 0.1);
+}
+
+.btn-outline-primary {
+  border-color: #FF5D00;
+  color: #FF5D00;
+}
+
+.btn-outline-primary:hover {
+  background-color: #FF5D00;
+  color: white;
+  border-color: #FF5D00;
+}
+button.btn:hover {
+  background-color: #1D2A5C !important;
+  color: white !important;
+  border-color:#1D2A5C !important;
+}
+.btn-orange{
+  background-color: #FF5D00 !important;
+  color: white !important;
+}

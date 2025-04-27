@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg shadow-sm px-4 py-2 bg-white">
+    <a class="navbar-brand fw-bold custom-logo" href="#">Invoicify</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/']">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/aboutus']">About us</a>
+        </li>
+        @if (groupName=='Buyer Group') {
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/shopping']">Shop</a>
+          </li>
+        }
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/contactus']">Contact us</a>
+        </li>
+
+      </ul>
+      @if (isLoggedIn=='true'){
+        <button class="btn btn-danger" (click)="signout()">Sign out</button>
+      }@else{
+        <button class="btn btn-orange"(click)="gotosignin()">Login</button>
+      }
+
+    </div>
+  </nav>

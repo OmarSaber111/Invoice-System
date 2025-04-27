@@ -1,0 +1,167 @@
+<section class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-4 p-4" style="background-color: #1D2A5C; color: white; min-height: 100vh;">
+      <h4 class="fw-bold mb-4">Brand Info</h4>
+      <p><strong>Store Name: </strong> {{ seller.storeName}}</p>
+      <p><strong>Seller ID: </strong> {{ seller.id}}</p>
+      <p><strong>Seller Email :</strong>{{ seller.email}}</p>
+      <p><strong>Type of Products: </strong> {{ seller.TypeOFProduct }}</p>
+      <p><strong>Governorate: </strong> {{ seller.government }}</p>
+
+      <hr style="border-color: #FF5D00;" />
+
+      <!-- Sidebar Navigation -->
+      <h5 class="fw-bold mb-3">Navigation</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2">
+          <a class="nav-link text-white"  [routerLink]="['/home']">
+            <i class="bi bi-house"></i> Home
+          </a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link text-white" [routerLink]="['/sellerinvoices', seller.id]">
+            <i class="bi bi-receipt"></i> Invoices
+          </a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link text-white" href="#">
+            <i class="bi bi-bar-chart"></i> Dashboard
+          </a>
+        </li>
+      </ul>
+
+      <hr style="border-color: #FF5D00;" />
+
+      <h5 class="fw-bold mb-3">Seller Info</h5>
+      <p><strong>Username:</strong> {{ seller.name }}</p>
+      <p><strong>ID:</strong> {{ seller.id }}</p>
+      <div>
+        <button (click)="openAddProductModal(seller.id)" class="btn btn-orange">+ Add new product</button>
+      </div>
+    </div>
+
+    <!-- Product Table -->
+    <div class="col-md-8 p-4">
+      <h3 class="fw-bold mb-4" style="color: #1D2A5C;">Products</h3>
+      <div class="table-responsive">
+        <table class="table table-hover align-middle">
+          <thead class="table-dark" style="background-color: #1D2A5C;">
+            <tr>
+              <th style="color: white;">ID</th>
+              <th style="color: white;">Name</th>
+              <th style="color: white;">Quantity</th>
+              <th style="color: white;">Price</th>
+              <th style="color: white;">Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (product of products; track product.id) {
+              <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.amount }}</td>
+                <td>{{ product.price }}</td>
+                <td>
+                  <button
+  class="btn btn-outline-primary btn-sm"
+  style="border-color: #FF5D00; color: #FF5D00;"
+  (click)="openModal(product)">
+  <i class="bi bi-info-circle"></i>
+</button>
+
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Product Details Modal -->
+<div class="modal fade" id="productDetailsModal" tabindex="-1" aria-labelledby="productDetailsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header" style="background-color: #1D2A5C; color: white;">
+        <h5 class="modal-title" id="productDetailsModalLabel" style="color: white;">Product Details</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <p><strong>ID:</strong> {{ selectedProduct.id }}</p>
+        @if (isEditing) {
+          <div class="form-group mb-3">
+            <label for="productName">Product Name</label>
+            <input type="text" class="form-control" id="productName" [formControl]="productNameControl">
+          </div>
+          <div class="form-group mb-3">
+            <label for="productAmount">Amount</label>
+            <input type="number" class="form-control" id="productAmount" [formControl]="amountControl">
+          </div>
+          <div class="form-group mb-3">
+            <label for="productPrice">Price</label>
+            <input type="number" class="form-control" id="productPrice" [formControl]="priceControl">
+          </div>
+        } @else {
+        <p><strong>Name:</strong> {{ selectedProduct.name }}</p>
+        <p><strong>Quantity:</strong> {{ selectedProduct.amount }}</p>
+        <p><strong>Price:</strong> {{ selectedProduct.price }}</p>
+        }
+      </div>
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        @if(isEditing){
+          <button class="btn btn-orange" (click)="saveProduct(selectedProduct.id)">
+            <i class="bi bi-pencil-square"></i> save
+          </button>
+        }@else{
+           <button (click)="deleteProduct(selectedProduct.id)" class="btn btn-orange me-auto">
+          <i class="bi bi-trash"></i> Delete
+        </button>
+        <button class="btn btn-orange" (click)="editProduct(selectedProduct)">
+          <i class="bi bi-pencil-square"></i> Edit
+        </button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          <i class="bi bi-x-circle"></i> Close
+        </button>
+        }
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Product Creation Modal -->
+<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #1D2A5C; color: white;">
+        <h5 class="modal-title" id="productModalLabel">Add New Product</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="onSubmit()">
+          <div class="form-group mb-3">
+            <label for="productName">Product Name</label>
+            <input type="text" class="form-control" id="productName" [formControl]="productNameControl">
+          </div>
+          <div class="form-group mb-3">
+            <label for="productAmount">Amount</label>
+            <input type="number" class="form-control" id="productAmount" [formControl]="amountControl">
+          </div>
+          <div class="form-group mb-3">
+            <label for="productPrice">Price</label>
+            <input type="number" class="form-control" id="productPrice" [formControl]="priceControl">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" (click)="onSubmit()" class="btn btn-orange">Save Product</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

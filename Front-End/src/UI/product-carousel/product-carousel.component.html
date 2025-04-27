@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row justify-content-center">
+<div class="carousel-container my-5">
+  <h3 class="text-center mb-4 fw-bold">You may also like</h3>
+  <div class="carousel">
+    @for (product of products; track product.id) {
+      <div class="product-card">
+        <div class="placeholder-box">
+          <img class="placeholder-box" src="../../assets/product.png" alt="">
+        </div>
+        <h5 class="mt-3">{{ product.name }}</h5>
+        <p class="price">{{ product.price }}</p>
+        <p class="store-name">{{ product.sellerName }}</p>
+        <small class="text-muted">Seller ID: {{ product.sellerId }}</small>
+        <p class="stock">In stock: {{ product.amount }}</p>
+      </div>
+    }
+    </div>
+    </div>
+  </div>
+  </div>
+

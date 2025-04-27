@@ -1,0 +1,103 @@
+<app-header></app-header>
+<div class="p-4">
+  <div class="container-fluid">
+    <h4 class="mb-3">Buyer Invoices</h4>
+
+    <div class="table-responsive">
+      <table class="table table-bordered align-middle">
+        <thead class="table-light">
+          <tr>
+            <th>Invoice ID</th>
+            <th>Seller ID</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+            <th>Generated On</th>
+            <th>Payment</th>
+            <th>Options</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (invoice of invoices; track invoice.id) {
+            <tr>
+              <td>INV#{{ invoice.id }}</td>
+              <td>#{{invoice.sellerId}}</td>
+              <td>PRODUCT {{invoice.productId}}</td>
+              <td>{{invoice.quantity}}</td>
+              <td>{{invoice.totalPrice}}</td>
+              <td>{{ invoice.createdAt }}</td>
+              @if (invoice.payment) {
+                <td>
+                  <span class="badge badge-green" >Paid</span>
+                </td>
+              } @else {
+                <td>
+                  <span class="badge badge-red" >Unpaid</span>
+                </td>
+              }
+              <td>
+                <button
+  class="btn btn-outline-primary btn-sm"
+  style="border-color: #FF5D00; color: #FF5D00;" (click)="openInvoiceModal(invoice)">
+  <i class="bi bi-info-circle"></i>
+</button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+      <p class="text-muted">Showing {{ invoices.length }} results</p>
+    </div>
+  </div>
+</div>
+<!-- Invoice Actions Modal -->
+<div class="modal fade" id="invoiceDetailsModal" tabindex="-1" aria-labelledby="invoiceDetailsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header" style="background-color: #1D2A5C; color: white;">
+        <h5 class="modal-title" id="invoiceDetailsModalLabel" style="color: white;">Invoice Actions</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <p><strong>Invoice ID:</strong> {{ selectedInvoice.id }}</p>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <button class="btn btn-orange me-auto" (click)="deleteInvoice(selectedInvoice.id)">
+          <i class="bi bi-trash"></i> Delete
+        </button>
+        @if (!selectedInvoice.payment){
+          <button class="btn btn-success" (click)="openPaymentModal(selectedInvoice)">
+            <i class="bi bi-cash-stack"></i> Pay
+          </button>
+
+
+          <!--another modal for the Payment shit-->
+       <div class="modal fade" id="successPaymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="paymentModalLabel">Payment Done</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Thank you! Your invoice #{{ selectedInvoice.id }} has been successfully paid. We appreciate your business.</p>
+                </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+          }
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

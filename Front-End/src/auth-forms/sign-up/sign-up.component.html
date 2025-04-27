@@ -1,0 +1,105 @@
+@if(alertMessage)
+{@if (alertType=='success') {
+  <div class="alert alert-success" role="alert"  style="position: fixed; top: 20px; right: 20px; z-index: 9999; max-width: 400px;">
+    {{ alertMessage }}
+  </div>
+} @else {
+  <div class="alert alert-danger" role="alert"  style="position: fixed; top: 20px; right: 20px; z-index: 9999; max-width: 400px;">
+    {{ alertMessage }}
+  </div>
+} }
+<section class="text-center">
+  <div class="p-5" style="background-color: #FF5D00; height: 300px;"></div>
+  <div class="card mx-4 mx-md-5 shadow-5-strong bg-body-tertiary" style="margin-top: -100px; backdrop-filter: blur(30px);">
+    <div class="card-body py-5 px-md-5">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="fw-bold mb-5" style="color: #1D2A5C;">Sign up now</h2>
+
+          <form  class="sign-up-form">
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <div data-mdb-input-init class="form-outline">
+                  <input type="text" id="firstName" class="form-control" required name="firstName" [formControl]="firstNameControl" />
+                  <label class="form-label" for="firstName">First name</label>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <div data-mdb-input-init class="form-outline">
+                  <input type="text" id="lastName" class="form-control" required name="lastName" [formControl]="lastNameControl" />
+                  <label class="form-label" for="lastName">Last name</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div data-mdb-input-init class="form-outline mb-4">
+              <input type="email" id="email" class="form-control" required [formControl]="emailControl" name="email" />
+              <label class="form-label" for="email">Email</label>
+            </div>
+
+            <!-- Username -->
+            <div data-mdb-input-init class="form-outline mb-4">
+              <input type="text" id="username" class="form-control" required [formControl]="usernameControl" name="username" />
+              <label class="form-label" for="username">Username</label>
+            </div>
+
+            <!-- Password -->
+            <div data-mdb-input-init class="form-outline mb-2">
+              <input type="password" id="password" class="form-control" [formControl]="passwordControl" name="password" />
+              <label class="form-label" for="password">Password</label>
+            </div>
+
+            <!-- Confirm Password -->
+            <div data-mdb-input-init class="form-outline mb-4">
+              <input type="password" id="confirmPassword" class="form-control" [formControl]="confirmPasswordControl" name="confirmPassword" />
+              <label class="form-label" for="confirmPassword">Confirm Password</label>
+            </div>
+
+            <!-- National ID -->
+            <div data-mdb-input-init class="form-outline mb-2">
+              <input type="text" id="nationalId" class="form-control" [formControl]="nationalIdControl" name="nationalId" />
+              <label class="form-label" for="nationalId">National ID</label>
+            </div>
+
+            <!-- Become a Seller -->
+            <div class="form-check d-flex justify-content-center mb-4">
+              <input class="form-check-input me-2" type="checkbox" value="" id="becomeSeller" (change)="check()" />
+              <label class="form-check-label" for="becomeSeller">Become a seller</label>
+            </div>
+
+            @if (isSeller) {
+              <!-- Store Name -->
+              <div data-mdb-input-init class="form-outline mb-4">
+                <input type="text" id="storeName" class="form-control" [formControl]="storeNameControl" name="storeName" />
+                <label class="form-label" for="storeName">Store Name</label>
+              </div>
+
+              <!-- Type of Products -->
+              <div data-mdb-input-init class="form-outline mb-4">
+                <input type="text" id="productType" class="form-control" [formControl]="productTypeControl" name="productType" />
+                <label class="form-label" for="productType">Type of Products</label>
+              </div>
+              <!-- Governorate Dropdown -->
+            <div class="form-outline mb-4">
+              <select id="governorate" class="form-select" required [formControl]="selectedGovernorateControl" name="governorate">
+                <option value="">Select Governorate</option>
+                @for (govern of governs; track govern.id) {
+                  <option [value]="govern.id">{{govern.name}}</option>
+                }
+              </select>
+              <label class="form-label" for="governorate">Governorate</label>
+            </div>
+            }
+
+            <!-- Submit button -->
+            <button (click)="signup()"  style="background-color: #FF5D00; border: hidden" type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block w-100 mb-4">
+              Sign up
+            </button>
+          </form>
+          <span>Have an account? </span> <a style="color: #FF5D00;" [routerLink]="['/signin']"> Login.</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

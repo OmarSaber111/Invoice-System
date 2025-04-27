@@ -1,0 +1,46 @@
+body, html {
+  height: 100%;
+}
+.dashboard-wrapper {
+  display: flex;
+  height: calc(100vh);
+}
+.sidebar {
+  width: 250px;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+.main-content {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.table-container {
+  flex: 1;
+  overflow-y: auto;
+}
+.table thead th {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 1;
+}
+.btn-orange {
+  background-color: #FF5D00;
+  color: white;
+  font-weight: 500;
+  border: none;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.btn-outline-dark:hover {
+  background-color: #e45600 !important;
+  border-color: #e45600;
+}
+
+.btn-dark:hover {
+  background-color: #e45600 !important;
+  border-color: #e45600;
+}

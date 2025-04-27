@@ -1,0 +1,33 @@
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.custom-logo {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1A234B;
+}
+
+.btn-orange {
+  background-color: #FF5D00;
+  color: white;
+  font-weight: 500;
+  border: none;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.btn-orange:hover {
+  background-color: #e45600;
+}
+
+.form-label {
+  margin-left: 0.25rem;
+}
+
+@media (max-width: 767px) {
+  .d-none.d-md-block {
+    display: none !important;
+  }
+}
+
+

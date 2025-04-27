@@ -1,0 +1,135 @@
+<app-header></app-header>
+
+<!-- Error Message Display -->
+@if (errorMessage) {
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{ errorMessage }}
+    <button type="button" class="btn-close" (click)="errorMessage = null"></button>
+  </div>
+}
+
+<div class="dashboard-wrapper">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h5 class="mb-3">Group Management</h5>
+    <div class="btn-group-vertical w-100">
+      <button class="btn btn-orange mb-2"
+              (click)="selectGroup('Seller')">Sellers</button>
+      <button class="btn btn-orange"
+              (click)="selectGroup('Buyer')">Buyers</button>
+    </div>
+
+    @if (selectedGroup) {
+      <div class="mt-4">
+        <h6>Permissions for {{ selectedGroup }}</h6>
+
+        @for (permission of allowedPermissions; track permission) {
+          @if (permission.group == selectedGroup) {
+            <div class="form-check">
+              <input class="form-check-input"
+                     type="checkbox"
+                     [checked]="permission.permission"
+                     (change)="toggleAction(permission.group, permission.action)"
+                     id="{{ permission.group + '-' + permission.action }}">
+              <label class="form-check-label"
+                     for="{{ permission.group + '-' + permission.action }}">
+                {{ permission.action }}
+              </label>
+            </div>
+          }
+        }
+
+        <button class="btn btn-orange mt-2 w-100"
+                (click)="savePermissions()">
+          Save Permissions
+        </button>
+      </div>
+    }
+
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content p-3">
+    <div class="d-flex justify-content-between mb-3">
+      <h4>User Management</h4>
+    </div>
+
+    @if (isLoading) {
+      <div class="text-center py-5">
+        <div class="spinner-border text-primary" role="status"></div>
+      </div>
+    } @else {
+      <div class="table-responsive">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Group</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (user of users; track user.id) {
+              <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{user.group}}</td>
+                <td>
+                  <div class="d-flex gap-2">
+                    <button class="btn btn-outline-dark"
+                            (click)="selectedUser = user">
+                      Edit
+                    </button>
+                    <button class="btn btn-dark"
+                            (click)="deleteUser(user)">
+                      Delete
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    }
+  </div>
+</div>
+
+<!-- Edit User Modal -->
+@if (selectedUser) {
+  <div class="modal fade show d-block" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit {{ selectedUser.name }}</h5>
+          <button type="button" class="btn-close" (click)="selectedUser = null"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">Current Group:</label>
+                {{ selectedUser.group }}
+          </div>
+
+          <div class="d-flex gap-2 justify-content-center">
+            @if (!selectedUser.group || selectedUser.group !== 'Seller Group') {
+              <button class="btn btn-dark"
+                      (click)="assignUserToGroup(selectedUser, 'Seller Group')">
+                Make Seller
+              </button>
+            }
+            @if (!selectedUser.group || selectedUser.group !== 'Buyer Group') {
+              <button class="btn btn-dark"
+                      (click)="assignUserToGroup(selectedUser, 'Buyer Group')">
+                Make Buyer
+              </button>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-backdrop fade show"></div>
+}

@@ -1,0 +1,88 @@
+/* Success Payment Modal Specific Styling */
+#successPaymentModal .modal-content {
+  background-color: #e6f9e6; /* Light green background for success */
+  border: 1px solid #4CAF50; /* Green border to match success */
+}
+
+#successPaymentModal .modal-header {
+  background-color: #4CAF50; /* Green background for the header */
+  color: white; /* White text for the title */
+}
+
+#successPaymentModal .modal-footer {
+  background-color: #e6f9e6; /* Light green background for the footer */
+}
+
+#successPaymentModal .btn-success {
+  background-color: #4CAF50; /* Green color for the button */
+  border-color: #4CAF50; /* Green border for the button */
+  color: white; /* White text on the button */
+}
+
+#successPaymentModal .btn-success:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
+  border-color: #45a049; /* Match border color on hover */
+}
+
+#successPaymentModal .text-muted {
+  color: #555; /* Darker muted text for better readability */
+}
+
+#successPaymentModal .modal-body p {
+  font-size: 1.2rem; /* Increase font size for better visibility */
+  color: #333; /* Darker text for the content */
+}
+
+#successPaymentModal .badge-green {
+  background-color: #4CAF50; /* Green badge for success */
+  color: white;
+}
+
+#successPaymentModal .badge-red {
+  background-color: #f44336; /* Red badge for failure */
+  color: white;
+}
+
+
+
+.badge-status {
+  padding: 0.5em 1em;
+  font-size: 0.9em;
+  border-radius: 20px;
+}
+.badge-green {
+  background-color: #e6f4ea;
+  color: #228b22;
+}
+.badge-yellow {
+  background-color: #fff7e6;
+  color: #ff9900;
+}
+.badge-red {
+  background-color: #ffe6e6;
+  color: #cc0000;
+}
+.table th, .table td {
+  vertical-align: middle;
+}
+
+
+.btn-outline-primary {
+  border-color: #FF5D00;
+  color: #FF5D00;
+}
+
+.btn-outline-primary:hover {
+  background-color: #FF5D00;
+  color: white;
+  border-color: #FF5D00;
+}
+button.btn:hover {
+  background-color: #1D2A5C !important;
+  color: white !important;
+  border-color:#1D2A5C !important;
+}
+.btn-orange{
+  background-color: #FF5D00 !important;
+  color: white !important;
+}

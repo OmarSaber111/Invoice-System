@@ -1,0 +1,48 @@
+<app-header></app-header>
+<section class="container my-4">
+  <h3 class="fw-bold mb-4" style="color: #1D2A5C;">Products</h3>
+  <!-- Product Table -->
+  <h4 class="fw-bold mb-3">All Products</h4>
+  <div class="table-responsive">
+    <table class="table table-hover align-middle">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Store</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (product of products; track product.id) {
+          <tr>
+
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.sellerName }}</td>
+            @if (product.amount!=0) {
+              <td>{{ product.amount }}</td>
+            }
+            @else {
+              <td><span class="badge bg-danger text-white fs-6 p-2">OUT OF STOCK</span></td>
+            }
+            <td>{{ product.price }}</td>
+            <td>
+             @if (product.amount>0) {
+              <button
+              (click)="buyProduct(product.id)"
+              class="btn btn-sm btn-outline-success">
+              <i class="bi bi-cart"></i> Buy
+            </button>
+            }
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>
+<app-product-carousel></app-product-carousel>
+<app-footer></app-footer>
